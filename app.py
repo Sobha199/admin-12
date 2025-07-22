@@ -24,7 +24,7 @@ elif page == "Dashboard":
     st.markdown("<h2 style='color:skyblue;'>Admin Dashboard</h2>", unsafe_allow_html=True)
     df = pd.read_csv("Tracking.csv")
     st.markdown("## 📊 Summary Metrics")
-    total_employees = df["Employee ID"].nunique()
+    total_employees = df["Emp id"].nunique()
     active = df[df["Status"].str.lower() == "active"]["User ID"].nunique()
     inactive = df[df["Status"].str.lower() == "inactive"]["User ID"].nunique()
     total_charts = df["Chart ID"].nunique() if "Chart ID" in df.columns else df.shape[0]
